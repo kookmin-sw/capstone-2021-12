@@ -1,7 +1,7 @@
 
 # Welcome to KangJeoungBae
 
-### 1. 프로잭트 소개
+### 1. 프로젝트 소개
 
 - 주제 : 개발자를 위한 개발
   - 지속적 통합(CI)에 이용되는 대표적인 도구인 Jenkins Plugin 개발하기
