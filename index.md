@@ -2,6 +2,7 @@
 # Welcome to KangJeoungBae
 
 ### 1. 프로잭트 소개
+
 - 주제 : 개발자를 위한 개발
   - 지속적 통합(CI)에 이용되는 대표적인 도구인 Jenkins Plugin 개발하기
 - 상세 목표 
@@ -22,18 +23,25 @@
 ~~~
 배한빈 (팀장, 20153032)
   
+  role   : Code Coverage Status Reporter 
   email  : Hanbin1931@gmail.com
   github : Hambbuk
 ~~~
+
+
 ~~~
 정현성 (팀원, 20163157)
- 
+    
+   role   : Build Status Reporter
    email  : sun3850@kookmin.ac.kr
    github : sun3850
 ~~~
+
+
 ~~~
 강주희 (팀원, 20181570)
    
+   role   : Unit Test Status Reporter
    email  : kangjuhee18@kookmin.ac.kr
    github : juheesvt
 ~~~
