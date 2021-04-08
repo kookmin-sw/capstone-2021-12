@@ -16,8 +16,12 @@
 
 
 ### 2. 소개 영상
-[![캡스톤 12팀(FaduCI) 소개영상](http://img.youtube.com/vi/l3EX-a9ZSPU/0.jpg)](https://youtu.be/l3EX-a9ZSPU) 
+[![Youtube Badge](https://img.shields.io/badge/Youtube-ff0000?style=flat-square&logo=youtube&link=https://youtu.be/l3EX-a9ZSPU")](https://youtu.be/l3EX-a9ZSPU)
 
+<a href="https://youtu.be/l3EX-a9ZSPU">
+<img src = "http://img.youtube.com/vi/l3EX-a9ZSPU/maxresdefault.jpg" width="640px">
+<a>
+  
 ### 3. 팀 소개
 ~~~
 배한빈 (팀장, 20153032)
