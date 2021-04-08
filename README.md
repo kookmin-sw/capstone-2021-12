@@ -16,7 +16,7 @@
 
 
 ### 2. 소개 영상
-
+https://youtu.be/l3EX-a9ZSPU
 
 ### 3. 팀 소개
 ~~~
