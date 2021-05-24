@@ -1,0 +1,77 @@
+<!--
+The MIT License (MIT)
+
+Copyright (c) 2014, Gregory Boissinot, Nikolas Falco
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+-->
+<?jelly escape-by-default='true'?>
+<j:jelly xmlns:j="jelly:core" xmlns:f="/lib/form">
+
+    <f:block>
+        <f:entry title="${%reportType.title}">
+            <f:repeatableHeteroProperty field="tools" hasHeader="true" />
+        </f:entry>
+    </f:block>
+
+    <f:block>
+        <f:entry title="${%thresholds.title}">
+            <f:repeatableHeteroProperty field="thresholds" hasHeader="true" oneEach="true"/>
+        </f:entry>
+    </f:block>
+
+    <f:block>
+        <!-- publisher are optional, if not extension is installed the empty list is hidden -->
+        <j:set var="testDataPublisherDescriptors" value="${descriptor.listTestDataPublisherDescriptors}" />
+        <j:if test="${testDataPublisherDescriptors.size() > 0}">
+            <f:entry title="${%testDataPublishers.title}">
+                <f:repeatableHeteroProperty field="testDataPublishers" hasHeader="true" oneEach="true"/>
+            </f:entry>
+        </j:if>
+    </f:block>
+
+    <f:block>
+        <f:advanced>
+            <f:entry field="thresholdMode" title="${%thresholdMode.title}">
+                <f:radio name="thresholdMode" value="1" checked="${instance.thresholdMode==1 or h.defaultToTrue(instance.thresholdMode)}"/>
+                <label class="attach-previous">${%thresholdMode.count}</label>
+                <br/>
+                <f:radio name="thresholdMode" value="2" checked="${instance.thresholdMode==2}"/>
+                <label class="attach-previous">${%thresholdMode.percentage}</label>
+            </f:entry>
+
+            <f:entry field="testTimeMargin" title="${%extraConfiguration.testTimeMargin.title}" description="${%extraConfiguration.testTimeMargin.description}">
+                <f:number value="${instance.extraConfiguration.testTimeMargin}" default="3000"/>
+            </f:entry>
+
+            <f:entry field="sleepTime" title="${%extraConfiguration.sleepTime.title}" description="${%extraConfiguration.sleepTime.description}">
+                <f:number value="${instance.extraConfiguration.sleepTime}" default="10"/>
+            </f:entry>
+
+            <f:entry field="reduceLog" title="${%extraConfiguration.reduceLog.title}" description="${%extraConfiguration.reduceLog.description}">
+                <f:checkbox checked="${instance.extraConfiguration.reduceLog}" default="true"/>
+            </f:entry>
+
+            <f:entry field="followSymlink" title="${%extraConfiguration.followSymlink.title}" description="${%extraConfiguration.followSymlink.description}">
+                <f:checkbox checked="${instance.extraConfiguration.followSymlink}" default="true"/>
+            </f:entry>
+        </f:advanced>
+    </f:block>
+
+</j:jelly>
